@@ -1,5 +1,6 @@
 import {BsSearch} from 'react-icons/bs'
-
+import RecentlyViewedData from '../RecentlyViewedData'
+import CartContext from '../../context/CartContext'
 import './index.css'
 
 const FiltersGroup = props => {
@@ -99,18 +100,34 @@ const FiltersGroup = props => {
   const {clearFilters} = props
 
   return (
-    <div className="filters-group-container">
-      {renderSearchInput()}
-      {renderProductCategories()}
-      {renderRatingsFilters()}
-      <button
-        type="button"
-        className="clear-filters-btn"
-        onClick={clearFilters}
-      >
-        Clear Filters
-      </button>
-    </div>
+    <CartContext.Consumer>
+      {value => {
+        const {recentData} = value
+        const dataLength = recentData.length > 0
+        return (
+          <div className="filters-group-container">
+            {renderSearchInput()}
+            {renderProductCategories()}
+            {renderRatingsFilters()}
+            <button
+              type="button"
+              className="clear-filters-btn"
+              onClick={clearFilters}
+            >
+              Clear Filters
+            </button>
+            {dataLength && (
+              <h1 className="products-list-heading">Recently Viewed</h1>
+            )}
+            <ul className="products-list">
+              {recentData.map(product => (
+                <RecentlyViewedData productData={product} key={product.id} />
+              ))}
+            </ul>
+          </div>
+        )
+      }}
+    </CartContext.Consumer>
   )
 }
 
