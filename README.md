@@ -1,24 +1,6 @@
+## **_Website_**:[http://urbancart.ccbp.tech/](http://urbancart.ccbp.tech/)🔗
+
 In this project, let's build a **Urban Cart - Cart Features** by applying the concepts we have learned till now.
-
-### Refer to the video below:
-
-<br/>
-<div style="text-align: center;">
-  <video style="max-width:70%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12);outline:none;" loop="true" autoplay="autoplay" controls="controls" muted>
-    <source src="https://assets.ccbp.in/frontend/content/react-js/nxt-trendz-cart-features-output.mp4" type="video/mp4">
-  </video>
-</div>
-<br/>
-
-### Design Files
-
-<details>
-<summary>Click to view</summary>
-
-- [Extra Small (Size < 576px) and Small (Size >= 576px)](https://assets.ccbp.in/frontend/content/react-js/nxt-trendz-cart-features-sm-output-v0.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://assets.ccbp.in/frontend/content/react-js/nxt-trendz-cart-features-lg-output.png)
-
-</details>
 
 ### Set Up Instructions
 
@@ -73,17 +55,6 @@ The app must have the following functionalities
   - `removeCartItem` - this method removes the cart item from the `cartList`
   - `incrementCartItemQuantity` - this method increases the quantity of a product in the `cartList`
   - `decrementCartItemQuantity` - this method decreases the quantity of a product in the `cartList`
-
-</details>
-
-<details>
-<summary>Components Structure</summary>
-
-<br/>
-<div style="text-align: center;">
-    <img src="https://assets.ccbp.in/frontend/content/react-js/nxt-trendz-cart-features-component-structure-breakdown.png" alt="component structure breakdown" style="max-width:100%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
-</div>
-<br/>
 
 </details>
 
