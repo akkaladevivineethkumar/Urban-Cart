@@ -113,7 +113,7 @@ class LoginForm extends Component {
         />
         <form className="form-container" onSubmit={this.submitForm}>
           <img
-            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
+            src="https://res.cloudinary.com/dv99nu7xv/image/upload/v1711709029/logo-no-background_draavc.png"
             className="login-website-logo-desktop-img"
             alt="website logo"
           />
