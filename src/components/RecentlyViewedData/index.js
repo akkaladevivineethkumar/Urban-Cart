@@ -8,7 +8,6 @@ const RecentlyViewedData = props => {
     <li className="product-item">
       <img src={imageUrl} alt="product" className="thumbnail1" />
       <h1 className="title1">{title}</h1>
-      <p className="brand1">by {brand}</p>
       <div className="product-details1">
         <p className="price1">Rs {price}/-</p>
         <div className="rating-container1">
