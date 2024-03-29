@@ -1,5 +1,5 @@
 import './index.css'
-
+//
 const RecentlyViewedData = props => {
   const {productData} = props
   const {title, brand, imageUrl, rating, price} = productData
