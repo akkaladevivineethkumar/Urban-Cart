@@ -5,9 +5,10 @@ const RecentlyViewedData = props => {
   const {title, brand, imageUrl, rating, price} = productData
 
   return (
-    <li className="product-item">
+    <li className="product-item1">
       <img src={imageUrl} alt="product" className="thumbnail1" />
       <h1 className="title1">{title}</h1>
+      <p className="brand1">by {brand}</p>
       <div className="product-details1">
         <p className="price1">Rs {price}/-</p>
         <div className="rating-container1">
@@ -19,7 +20,6 @@ const RecentlyViewedData = props => {
           />
         </div>
       </div>
-      {/* </Link> */}
     </li>
   )
 }

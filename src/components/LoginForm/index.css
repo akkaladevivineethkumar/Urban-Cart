@@ -28,14 +28,16 @@
   }
 }
 
-.login-img {
-  width: 278px;
+@media screen and (max-width: 991px) {
+  .login-img {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 992px) {
   .login-img {
     width: 60%;
-    max-width: 524px;
+    max-width: 610px;
     flex-shrink: 1;
     margin-right: 20px;
   }

@@ -107,7 +107,7 @@ class LoginForm extends Component {
           alt="website logo"
         />
         <img
-          src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-login-img.png"
+          src="https://res.cloudinary.com/dv99nu7xv/image/upload/v1711798351/5865_lbngi5.jpg"
           className="login-img"
           alt="website login"
         />

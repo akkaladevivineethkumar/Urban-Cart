@@ -6,9 +6,20 @@
   flex-wrap: wrap;
 }
 
+.products-header1 {
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  margin-top: 24px;
+  /* flex-wrap: wrap; */
+}
+
 @media screen and (min-width: 768px) {
   .products-header {
     margin-top: 32px;
+  }
+  .products-header1 {
+    margin-top: 44px;
   }
 }
 
@@ -21,7 +32,7 @@
 
 @media screen and (min-width: 768px) {
   .products-list-heading {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
 
@@ -58,4 +69,16 @@
   color: #7e858e;
   font-family: 'Roboto';
   font-size: 14px;
+}
+
+.products-list1 {
+  display: flex;
+  padding-left: 0;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: lightgrey;
+  font-size: 24px;
+  line-height: 1;
 }
