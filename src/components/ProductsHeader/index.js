@@ -28,9 +28,10 @@ const ProductsHeader = props => {
   return (
     <CartContext.Consumer>
       {value => {
-        const {recentData} = value
+        const {recentData, activeCat} = value
         const dataLength = recentData.length > 0
         const sliderView = recentData.length >= 4
+        const View = activeCat === '' ? 'All Products' : activeCat
 
         return (
           <>
@@ -61,7 +62,7 @@ const ProductsHeader = props => {
               )}
             </div>
             <div className="products-header">
-              <h1 className="products-list-heading">All Products</h1>
+              <h1 className="products-list-heading">{View}</h1>
               <div className="sort-by-container">
                 <BsFilterRight className="sort-by-icon" />
                 <p className="sort-by">Sort by</p>

@@ -16,6 +16,7 @@ class App extends Component {
   state = {
     cartList: [],
     recentData: [],
+    activeCat: '',
   }
 
   addCartItem = product => {
@@ -94,8 +95,13 @@ class App extends Component {
     }
   }
 
+  getActiveCat = activeId => {
+    this.setState({activeCat: activeId})
+  }
+
   render() {
-    const {cartList, recentData} = this.state
+    const {cartList, recentData, activeCat} = this.state
+    console.log(activeCat)
     return (
       <CartContext.Provider
         value={{
@@ -106,9 +112,9 @@ class App extends Component {
           incrementCartItemQuantity: this.incrementCartItemQuantity,
           decrementCartItemQuantity: this.decrementCartItemQuantity,
           recentlyVisted: this.recentlyVisted,
-          //   getAllData: this.getAllData,
           recentData,
-          //   allData11,
+          activeCat,
+          getActiveCat: this.getActiveCat,
         }}
       >
         <Switch>

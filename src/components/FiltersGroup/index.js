@@ -1,4 +1,5 @@
 import {BsSearch} from 'react-icons/bs'
+import CartContext from '../../context/CartContext'
 import './index.css'
 
 const FiltersGroup = props => {
@@ -39,24 +40,35 @@ const FiltersGroup = props => {
   const renderCategoriesList = () => {
     const {categoryOptions} = props
 
-    return categoryOptions.map(category => {
-      const {changeCategory, activeCategoryId} = props
-      const onClickCategoryItem = () => changeCategory(category.categoryId)
-      const isActive = category.categoryId === activeCategoryId
-      const categoryClassName = isActive
-        ? `category-name active-category-name`
-        : `category-name`
+    return (
+      <CartContext.Consumer>
+        {value => {
+          const {getActiveCat} = value
+          const {changeCategory, activeCategoryId} = props
 
-      return (
-        <li
-          className="category-item"
-          key={category.categoryId}
-          onClick={onClickCategoryItem}
-        >
-          <p className={categoryClassName}>{category.name}</p>
-        </li>
-      )
-    })
+          return categoryOptions.map(category => {
+            const onClickCategoryItem = () => {
+              changeCategory(category.categoryId)
+              getActiveCat(category.name)
+            }
+            const isActive = category.categoryId === activeCategoryId
+            const categoryClassName = isActive
+              ? `category-name active-category-name`
+              : `category-name`
+
+            return (
+              <li
+                className="category-item"
+                key={category.categoryId}
+                onClick={onClickCategoryItem}
+              >
+                <p className={categoryClassName}>{category.name}</p>
+              </li>
+            )
+          })
+        }}
+      </CartContext.Consumer>
+    )
   }
 
   const renderProductCategories = () => (
@@ -98,18 +110,31 @@ const FiltersGroup = props => {
   const {clearFilters} = props
 
   return (
-    <div className="filters-group-container">
-      {renderSearchInput()}
-      {renderProductCategories()}
-      {renderRatingsFilters()}
-      <button
-        type="button"
-        className="clear-filters-btn"
-        onClick={clearFilters}
-      >
-        Clear Filters
-      </button>
-    </div>
+    <CartContext.Consumer>
+      {value => {
+        const {getActiveCat} = value
+
+        const handleClearFilters = () => {
+          getActiveCat('')
+          clearFilters()
+        }
+
+        return (
+          <div className="filters-group-container">
+            {renderSearchInput()}
+            {renderProductCategories()}
+            {renderRatingsFilters()}
+            <button
+              type="button"
+              className="clear-filters-btn"
+              onClick={handleClearFilters}
+            >
+              Clear Filters
+            </button>
+          </div>
+        )
+      }}
+    </CartContext.Consumer>
   )
 }
 
